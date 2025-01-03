@@ -50,7 +50,7 @@ public class TimeServlet extends HttpServlet {
             TimeZone timeZoneCheck = TimeZone.getTimeZone(timezone);
             if (!timeZoneCheck.getID().equals("GMT")) {
                 Cookie cookie = new Cookie("lastTimezone", timezone);
-                cookie.setMaxAge(60 * 60 * 24 * 30); // 30 днів
+                cookie.setMaxAge(60 * 60 * 24 * 30);
                 response.addCookie(cookie);
             } else {
                 timezone = "UTC";
